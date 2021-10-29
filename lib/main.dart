@@ -24,7 +24,7 @@ class _AppState extends State<App> {
     super.initState();
 
     focusNodes = List<FocusNode>.generate(
-      10,
+      9,
       (int i) => FocusNode(debugLabel: 'Onboarding Focus Node $i'),
       growable: false,
     );
@@ -58,25 +58,25 @@ class _AppState extends State<App> {
             ),
             OnboardingStep(
               focusNode: focusNodes[1],
-              title: 'left fab',
+              title: 'start-tour',
               bodyText: 'Tap to continue',
               shape: const CircleBorder(),
               fullscreen: false,
               overlayColor: Colors.blue.withOpacity(0.9),
               overlayShape: const CircleBorder(),
             ),
+            // OnboardingStep(
+            //   focusNode: focusNodes[2],
+            //   title: 'right fab',
+            //   bodyText: 'Tap only here to increment',
+            //   shape: const CircleBorder(),
+            //   fullscreen: false,
+            //   overlayColor: Colors.blue.withOpacity(0.9),
+            //   overlayShape: const CircleBorder(),
+            //   overlayBehavior: HitTestBehavior.deferToChild,
+            // ),
             OnboardingStep(
               focusNode: focusNodes[2],
-              title: 'right fab',
-              bodyText: 'Tap only here to increment',
-              shape: const CircleBorder(),
-              fullscreen: false,
-              overlayColor: Colors.blue.withOpacity(0.9),
-              overlayShape: const CircleBorder(),
-              overlayBehavior: HitTestBehavior.deferToChild,
-            ),
-            OnboardingStep(
-              focusNode: focusNodes[3],
               title: 'Easy to customize',
               bodyText: 'Easy to customize',
               overlayColor: Colors.red.withOpacity(0.9),
@@ -96,7 +96,7 @@ class _AppState extends State<App> {
               textAlign: TextAlign.center,
             ),
             OnboardingStep(
-              focusNode: focusNodes[4],
+              focusNode: focusNodes[3],
               title: 'Menu',
               bodyText: 'You can open menu from here',
               overlayColor: Colors.green.withOpacity(0.9),
@@ -104,7 +104,7 @@ class _AppState extends State<App> {
               overlayBehavior: HitTestBehavior.translucent,
             ),
             OnboardingStep(
-              focusNode: focusNodes[5],
+              focusNode: focusNodes[4],
               title: 'Settings',
               shape: const CircleBorder(),
               bodyText: 'Click here to access settings',
@@ -113,7 +113,7 @@ class _AppState extends State<App> {
               overlayShape: const CircleBorder(),
             ),
             OnboardingStep(
-              focusNode: focusNodes[6],
+              focusNode: focusNodes[5],
               title: 'Counter Value',
               bodyText: 'With automatic vertical positioning of the text',
               labelBoxPadding: const EdgeInsets.all(16.0),
@@ -131,14 +131,14 @@ class _AppState extends State<App> {
               hasLabelBox: true,
             ),
             OnboardingStep(
-              focusNode: focusNodes[7],
+              focusNode: focusNodes[6],
               title: "Or no widget at all! You're all done!",
               bodyText: "Or no widget at all! You're all done!",
               margin: EdgeInsets.zero,
               labelBoxPadding: const EdgeInsets.all(8.0),
             ),
             OnboardingStep(
-              focusNode: focusNodes[8],
+              focusNode: focusNodes[7],
               title: 'Icon 1',
               shape: const CircleBorder(),
               bodyText: 'Icon 1Icon 1Icon 1Icon 1Icon 1Icon 1Icon 1Icon 1',
@@ -147,7 +147,7 @@ class _AppState extends State<App> {
               overlayShape: const CircleBorder(),
             ),
             OnboardingStep(
-              focusNode: focusNodes[9],
+              focusNode: focusNodes[8],
               title: 'Icon 2',
               shape: BeveledRectangleBorder(
                 borderRadius: BorderRadius.circular(15.0),
@@ -224,7 +224,7 @@ class _HomeState extends State<Home> {
           return ListTile(
             leading: Focus(
               child: Icon(Icons.alarm),
-              focusNode: widget.focusNodes[index + 8],
+              focusNode: widget.focusNodes[index + 7],
             ),
             title: Text('Item ${index + 1}'),
             trailing: Text('${index + 8}'),
