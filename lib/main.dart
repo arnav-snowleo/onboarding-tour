@@ -189,25 +189,6 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  late int _counter;
-
-  @override
-  void initState() {
-    super.initState();
-    _counter = 0;
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-  }
-
-  void _increment(BuildContext context) {
-    setState(() {
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -240,67 +221,25 @@ class _HomeState extends State<Home> {
       body: ListView.builder(
         itemCount: 2,
         itemBuilder: (BuildContext context, int index) {
-          return index == 5
-              ? Focus(
-                  focusNode: widget.focusNodes[13],
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Focus(
-                            focusNode: widget.focusNodes[0],
-                            child: const Text(
-                                'You have pushed the button this many times:'),
-                          ),
-                          Focus(
-                            focusNode: widget.focusNodes[6],
-                            child: Text(
-                              '$_counter',
-                              style: Theme.of(context).textTheme.headline4,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                )
-              : ListTile(
-                  leading: Focus(
-                    child: Icon(Icons.alarm),
-                    focusNode: widget.focusNodes[index + 8],
-                  ),
-                  title: Text('Item ${index + 1}'),
-                  trailing: Text('${index + 8}'),
-                );
+          return ListTile(
+            leading: Focus(
+              child: Icon(Icons.alarm),
+              focusNode: widget.focusNodes[index + 8],
+            ),
+            title: Text('Item ${index + 1}'),
+            trailing: Text('${index + 8}'),
+          );
         },
       ),
-      floatingActionButton: Padding(
-        padding: const EdgeInsets.only(left: 32),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            FloatingActionButton(
-              focusNode: widget.focusNodes[1],
-              onPressed: () {
-                final OnboardingState? onboarding = Onboarding.of(context);
-                if (onboarding != null) {
-                  onboarding.show();
-                }
-              },
-              child: const Icon(Icons.add),
-            ),
-            FloatingActionButton(
-              focusNode: widget.focusNodes[2],
-              onPressed: () {
-                _increment(context);
-              },
-              child: const Icon(Icons.add),
-            ),
-          ],
-        ),
+      floatingActionButton: FloatingActionButton(
+        focusNode: widget.focusNodes[1],
+        onPressed: () {
+          final OnboardingState? onboarding = Onboarding.of(context);
+          if (onboarding != null) {
+            onboarding.show();
+          }
+        },
+        child: const Icon(Icons.ac_unit),
       ),
     );
   }
