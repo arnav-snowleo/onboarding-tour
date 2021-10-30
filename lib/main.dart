@@ -87,25 +87,25 @@ class _AppState extends State<App> {
             ),
             OnboardingStep(
               focusNode: focusNodes[3],
-              title: 'Menu',
-              bodyText: 'You can open menu from here',
+              title: 'tour',
+              bodyText: 'take the tour to get started',
               overlayColor: Colors.green.withOpacity(0.9),
               shape: const CircleBorder(),
               overlayBehavior: HitTestBehavior.translucent,
             ),
             OnboardingStep(
               focusNode: focusNodes[4],
-              title: 'Settings',
+              title: 'Menu',
               shape: const CircleBorder(),
-              bodyText: 'Click here to access settings',
+              bodyText: 'Click here to access menu',
               fullscreen: false,
               overlayColor: Colors.black.withOpacity(0.8),
               overlayShape: const CircleBorder(),
             ),
             OnboardingStep(
               focusNode: focusNodes[5],
-              title: 'Counter Value',
-              bodyText: 'With automatic vertical positioning of the text',
+              title: 'Logout',
+              bodyText: 'press to logout',
               labelBoxPadding: const EdgeInsets.all(16.0),
               labelBoxDecoration: BoxDecoration(
                   shape: BoxShape.rectangle,
@@ -173,12 +173,12 @@ class _HomeState extends State<Home> {
         ),
         title: Focus(
           focusNode: widget.focusNodes[3],
-          child: const Text('Super Long Title'),
+          child: const Text('Onboarding Tour'),
         ),
         actions: [
           IconButton(
             focusNode: widget.focusNodes[5],
-            icon: const Icon(Icons.add),
+            icon: const Icon(Icons.logout),
             onPressed: () {},
           )
         ],
