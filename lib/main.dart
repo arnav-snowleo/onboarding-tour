@@ -24,7 +24,7 @@ class _AppState extends State<App> {
     super.initState();
 
     focusNodes = List<FocusNode>.generate(
-      18,
+      7,
       (int i) => FocusNode(debugLabel: 'Onboarding Focus Node $i'),
       growable: false,
     );
@@ -58,7 +58,7 @@ class _AppState extends State<App> {
             ),
             OnboardingStep(
               focusNode: focusNodes[1],
-              title: 'left fab',
+              title: 'start-tour',
               bodyText: 'Tap to continue',
               shape: const CircleBorder(),
               fullscreen: false,
@@ -67,16 +67,6 @@ class _AppState extends State<App> {
             ),
             OnboardingStep(
               focusNode: focusNodes[2],
-              title: 'right fab',
-              bodyText: 'Tap only here to increment',
-              shape: const CircleBorder(),
-              fullscreen: false,
-              overlayColor: Colors.blue.withOpacity(0.9),
-              overlayShape: const CircleBorder(),
-              overlayBehavior: HitTestBehavior.deferToChild,
-            ),
-            OnboardingStep(
-              focusNode: focusNodes[3],
               title: 'Easy to customize',
               bodyText: 'Easy to customize',
               overlayColor: Colors.red.withOpacity(0.9),
@@ -96,27 +86,26 @@ class _AppState extends State<App> {
               textAlign: TextAlign.center,
             ),
             OnboardingStep(
-              focusNode: focusNodes[4],
-              title: 'Menu',
-              bodyText: 'You can open menu from here',
+              focusNode: focusNodes[3],
+              title: 'tour',
+              bodyText: 'take the tour to get started',
               overlayColor: Colors.green.withOpacity(0.9),
               shape: const CircleBorder(),
               overlayBehavior: HitTestBehavior.translucent,
             ),
             OnboardingStep(
-              focusNode: focusNodes[5],
-              title: 'Settings',
+              focusNode: focusNodes[4],
+              title: 'Menu',
               shape: const CircleBorder(),
-              bodyText:
-                  'Click here to access settings such as dark mode, daily limit, etc',
+              bodyText: 'Click here to access menu',
               fullscreen: false,
               overlayColor: Colors.black.withOpacity(0.8),
               overlayShape: const CircleBorder(),
             ),
             OnboardingStep(
-              focusNode: focusNodes[6],
-              title: 'Counter Value',
-              bodyText: 'With automatic vertical positioning of the text',
+              focusNode: focusNodes[5],
+              title: 'Logout',
+              bodyText: 'press to logout',
               labelBoxPadding: const EdgeInsets.all(16.0),
               labelBoxDecoration: BoxDecoration(
                   shape: BoxShape.rectangle,
@@ -132,141 +121,16 @@ class _AppState extends State<App> {
               hasLabelBox: true,
             ),
             OnboardingStep(
-              focusNode: focusNodes[7],
-              title: "Or no widget at all! You're all done!",
-              bodyText: "Or no widget at all! You're all done!",
+              focusNode: focusNodes[6],
+              title: "You're all done!",
+              bodyText:
+                  "you're all set to have a seamless expereince usin our app",
               margin: EdgeInsets.zero,
               labelBoxPadding: const EdgeInsets.all(8.0),
             ),
-            OnboardingStep(
-              focusNode: focusNodes[8],
-              title: 'Icon 1',
-              shape: const CircleBorder(),
-              bodyText: 'Icon 1Icon 1Icon 1Icon 1Icon 1Icon 1Icon 1Icon 1',
-              fullscreen: false,
-              overlayColor: Colors.black.withOpacity(0.8),
-              overlayShape: const CircleBorder(),
-            ),
-            OnboardingStep(
-              focusNode: focusNodes[9],
-              title: 'Icon 2',
-              shape: BeveledRectangleBorder(
-                borderRadius: BorderRadius.circular(15.0),
-              ),
-              bodyText:
-                  'Icon 2Icon 2Icon 2Icon 2Icon 2Icon 2Icon 2Icon 2Icon 2Icon 2Icon 2Icon 2',
-              fullscreen: false,
-              overlayColor: Colors.black.withOpacity(0.8),
-              overlayShape: const CircleBorder(),
-            ),
-            OnboardingStep(
-              focusNode: focusNodes[10],
-              title: 'Icon 3',
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16.0),
-              ),
-              bodyText:
-                  'Icon 3Icon 3Icon 3Icon 3Icon 3Icon 3Icon 3Icon 3Icon 3Icon 3Icon 3Icon 3Icon 3Icon 3',
-              fullscreen: false,
-              overlayColor: Colors.black.withOpacity(0.8),
-              overlayShape: const CircleBorder(),
-              hasArrow: true,
-              hasLabelBox: true,
-              labelBoxDecoration: BoxDecoration(color: Colors.orange.shade900),
-              arrowPosition: ArrowPosition.top,
-            ),
-            OnboardingStep(
-              focusNode: focusNodes[11],
-              title: 'Icon 4',
-              shape: ContinuousRectangleBorder(
-                borderRadius: BorderRadius.circular(16.0),
-              ),
-              bodyText:
-                  'Icon 4Icon 4Icon 4Icon 4Icon 4Icon 4Icon 4Icon 4Icon 4Icon 4Icon 4Icon 4',
-              fullscreen: false,
-              overlayColor: Colors.black.withOpacity(0.8),
-              overlayShape: const CircleBorder(),
-              hasArrow: true,
-              hasLabelBox: true,
-              labelBoxDecoration: BoxDecoration(color: Colors.green),
-              arrowPosition: ArrowPosition.top,
-            ),
-            OnboardingStep(
-              focusNode: focusNodes[12],
-              title: 'Icon 5',
-              shape: const CircleBorder(),
-              bodyText:
-                  'Icon 5Icon 5Icon 5Icon 5Icon 5Icon 5Icon 5Icon 5Icon 5',
-              fullscreen: false,
-              overlayColor: Colors.black.withOpacity(0.8),
-              overlayShape: const CircleBorder(),
-            ),
-            OnboardingStep(
-              focusNode: focusNodes[13],
-              title: 'No icon',
-              bodyText: 'No iconNo iconNo iconNo iconNo iconNo iconNo iconNo ',
-              fullscreen: true,
-              overlayColor: Colors.black.withOpacity(0.8),
-              hasArrow: true,
-              hasLabelBox: true,
-              labelBoxDecoration: BoxDecoration(color: Colors.purple),
-              arrowPosition: ArrowPosition.bottom,
-            ),
-            OnboardingStep(
-              focusNode: focusNodes[14],
-              title: 'Icon 7',
-              shape: const CircleBorder(),
-              bodyText: 'Icon 7Icon 7Icon 7Icon 7Icon ',
-              fullscreen: false,
-              overlayColor: Colors.black.withOpacity(0.8),
-              overlayShape: const CircleBorder(),
-            ),
-            OnboardingStep(
-              focusNode: focusNodes[15],
-              title: 'Icon 8',
-              shape: const CircleBorder(),
-              bodyText: 'Icon 8Icon 8Icon 8Icon 8Icon 8Icon 8Icon ',
-              fullscreen: false,
-              overlayColor: Colors.black.withOpacity(0.8),
-              overlayShape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(28.0),
-              ),
-              hasArrow: true,
-              hasLabelBox: true,
-              labelBoxDecoration: BoxDecoration(color: Colors.cyan.shade900),
-              arrowPosition: ArrowPosition.bottom,
-            ),
-            OnboardingStep(
-              focusNode: focusNodes[16],
-              title: 'Icon 9',
-              shape: const CircleBorder(),
-              bodyText: 'Icon 9Icon 9Icon 9Icon 9Icon ',
-              fullscreen: false,
-              overlayColor: Colors.black.withOpacity(0.8),
-              overlayShape: BeveledRectangleBorder(
-                borderRadius: BorderRadius.circular(30.0),
-              ),
-              hasArrow: true,
-              hasLabelBox: true,
-              labelBoxDecoration: BoxDecoration(
-                color: Colors.pink.shade900,
-              ),
-              arrowPosition: ArrowPosition.bottom,
-            ),
-            OnboardingStep(
-              focusNode: focusNodes[17],
-              title: 'Icon 10',
-              shape: const CircleBorder(),
-              bodyText: 'Icon 10Icon 10Icon 10Icon 10Icon 10Icon 10Icon',
-              fullscreen: false,
-              overlayColor: Colors.black.withOpacity(0.8),
-              overlayShape: ContinuousRectangleBorder(
-                borderRadius: BorderRadius.circular(30.0),
-              ),
-            ),
           ],
           onChanged: (int index) {
-            if (index == 4) {
+            if (index == 5) {
               // close the drawer
               if (scaffoldKey.currentState?.isDrawerOpen ?? false) {
                 scaffoldKey.currentState?.openEndDrawer();
@@ -295,25 +159,6 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  late int _counter;
-
-  @override
-  void initState() {
-    super.initState();
-    _counter = 0;
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-  }
-
-  void _increment(BuildContext context) {
-    setState(() {
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -328,12 +173,12 @@ class _HomeState extends State<Home> {
         ),
         title: Focus(
           focusNode: widget.focusNodes[3],
-          child: const Text('Super Long Title'),
+          child: const Text('Onboarding Tour'),
         ),
         actions: [
           IconButton(
             focusNode: widget.focusNodes[5],
-            icon: const Icon(Icons.add),
+            icon: const Icon(Icons.logout),
             onPressed: () {},
           )
         ],
@@ -343,70 +188,20 @@ class _HomeState extends State<Home> {
           child: Text('Menu'),
         ),
       ),
-      body: ListView.builder(
-        itemCount: 10,
-        itemBuilder: (BuildContext context, int index) {
-          return index == 5
-              ? Focus(
-                  focusNode: widget.focusNodes[13],
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Focus(
-                            focusNode: widget.focusNodes[0],
-                            child: const Text(
-                                'You have pushed the button this many times:'),
-                          ),
-                          Focus(
-                            focusNode: widget.focusNodes[6],
-                            child: Text(
-                              '$_counter',
-                              style: Theme.of(context).textTheme.headline4,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                )
-              : ListTile(
-                  leading: Focus(
-                    child: Icon(Icons.alarm),
-                    focusNode: widget.focusNodes[index + 8],
-                  ),
-                  title: Text('Item ${index + 1}'),
-                  trailing: Text('${index + 8}'),
-                );
-        },
-      ),
-      floatingActionButton: Padding(
-        padding: const EdgeInsets.only(left: 32),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            FloatingActionButton(
-              focusNode: widget.focusNodes[1],
-              onPressed: () {
-                final OnboardingState? onboarding = Onboarding.of(context);
-                if (onboarding != null) {
-                  onboarding.show();
-                }
-              },
-              child: const Icon(Icons.add),
-            ),
-            FloatingActionButton(
-              focusNode: widget.focusNodes[2],
-              onPressed: () {
-                _increment(context);
-              },
-              child: const Icon(Icons.add),
-            ),
-          ],
+      body: Center(
+        child: Container(
+          child: Text('Hello 👋 '),
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        focusNode: widget.focusNodes[1],
+        onPressed: () {
+          final OnboardingState? onboarding = Onboarding.of(context);
+          if (onboarding != null) {
+            onboarding.show();
+          }
+        },
+        child: const Icon(Icons.ac_unit),
       ),
     );
   }
