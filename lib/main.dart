@@ -24,7 +24,7 @@ class _AppState extends State<App> {
     super.initState();
 
     focusNodes = List<FocusNode>.generate(
-      9,
+      7,
       (int i) => FocusNode(debugLabel: 'Onboarding Focus Node $i'),
       growable: false,
     );
@@ -65,16 +65,6 @@ class _AppState extends State<App> {
               overlayColor: Colors.blue.withOpacity(0.9),
               overlayShape: const CircleBorder(),
             ),
-            // OnboardingStep(
-            //   focusNode: focusNodes[2],
-            //   title: 'right fab',
-            //   bodyText: 'Tap only here to increment',
-            //   shape: const CircleBorder(),
-            //   fullscreen: false,
-            //   overlayColor: Colors.blue.withOpacity(0.9),
-            //   overlayShape: const CircleBorder(),
-            //   overlayBehavior: HitTestBehavior.deferToChild,
-            // ),
             OnboardingStep(
               focusNode: focusNodes[2],
               title: 'Easy to customize',
@@ -132,35 +122,15 @@ class _AppState extends State<App> {
             ),
             OnboardingStep(
               focusNode: focusNodes[6],
-              title: "Or no widget at all! You're all done!",
-              bodyText: "Or no widget at all! You're all done!",
+              title: "You're all done!",
+              bodyText:
+                  "you're all set to have a seamless expereince usin our app",
               margin: EdgeInsets.zero,
               labelBoxPadding: const EdgeInsets.all(8.0),
             ),
-            OnboardingStep(
-              focusNode: focusNodes[7],
-              title: 'Icon 1',
-              shape: const CircleBorder(),
-              bodyText: 'Icon 1Icon 1Icon 1Icon 1Icon 1Icon 1Icon 1Icon 1',
-              fullscreen: false,
-              overlayColor: Colors.black.withOpacity(0.8),
-              overlayShape: const CircleBorder(),
-            ),
-            OnboardingStep(
-              focusNode: focusNodes[8],
-              title: 'Icon 2',
-              shape: BeveledRectangleBorder(
-                borderRadius: BorderRadius.circular(15.0),
-              ),
-              bodyText:
-                  'Icon 2Icon 2Icon 2Icon 2Icon 2Icon 2Icon 2Icon 2Icon 2Icon 2Icon 2Icon 2',
-              fullscreen: false,
-              overlayColor: Colors.black.withOpacity(0.8),
-              overlayShape: const CircleBorder(),
-            ),
           ],
           onChanged: (int index) {
-            if (index == 4) {
+            if (index == 5) {
               // close the drawer
               if (scaffoldKey.currentState?.isDrawerOpen ?? false) {
                 scaffoldKey.currentState?.openEndDrawer();
@@ -218,18 +188,10 @@ class _HomeState extends State<Home> {
           child: Text('Menu'),
         ),
       ),
-      body: ListView.builder(
-        itemCount: 2,
-        itemBuilder: (BuildContext context, int index) {
-          return ListTile(
-            leading: Focus(
-              child: Icon(Icons.alarm),
-              focusNode: widget.focusNodes[index + 7],
-            ),
-            title: Text('Item ${index + 1}'),
-            trailing: Text('${index + 8}'),
-          );
-        },
+      body: Center(
+        child: Container(
+          child: Text('Hello 👋 '),
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         focusNode: widget.focusNodes[1],
